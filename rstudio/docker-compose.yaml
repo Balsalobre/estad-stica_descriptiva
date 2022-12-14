@@ -1,0 +1,21 @@
+version: "3.5"
+services:
+  rstudio:
+    environment:
+      - USER=bls
+      - PASSWORD=supersegura
+    image: "rocker/tidyverse:latest"
+    volumes:
+      - /home/bls/Cursos/estadistica-descriptiva/rstudio/R_and_Jupyter_scripts:/home/bls/R_and_Jupyter_scripts
+    container_name: rstudio
+    ports:
+      - 8787:8787
+
+  jupyter:
+    image: 'jupyter/datascience-notebook:latest'
+    ports:
+      - 8888:8888
+    volumes:
+      - /tmp/R_and_Jupyter_scripts:/home/bls/R_and_Jupyter_scripts
+    working_dir: /home/bls/R_and_Jupyter_scripts
+    container_name: jupyter
