@@ -1,1 +1,1 @@
-# estadistica_descriptiva en R y Python
+# Estadística descriptiva en R y Python.
